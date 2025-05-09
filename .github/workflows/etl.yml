@@ -1,4 +1,4 @@
-name: Run Merapi ETL and Deploy
+name: merapi-api-etl
 
 on:
   schedule:
