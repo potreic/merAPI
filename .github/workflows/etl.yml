@@ -2,7 +2,7 @@ name: Run Merapi ETL and Deploy
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -22,13 +22,23 @@ jobs:
 
       - name: Run ETL pipeline
         run: |
-          python raw.py
           python transform.py
-
+      
       - name: Deploy data.json to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages
-          destination_dir: .
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_branch: gh-pages
+            publish_dir: ./
+            destination_dir: .
+            keep_files: false
+            enable_jekyll: false
+            exclude_assets: |
+              fetch.py
+              raw.py
+              schedule.py
+              show.py
+              transform.py
+              README.md
+              LICENSE
+              .gitignore
