@@ -1,0 +1,21 @@
+# Byte-compiled / caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual env
+env_caps/
+
+# Data lokal (bisa di-fetch ulang)
+raw_data/
+clean_data/
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
