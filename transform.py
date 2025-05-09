@@ -36,7 +36,9 @@ def transform_merapi(raw_dir="raw_data", output_dir="clean_data", volcano="Merap
     os.makedirs(output_dir, exist_ok=True)
     clean_filename = f"{volcano.lower()}_{ts_str}.json"
     clean_path = os.path.join(output_dir, clean_filename)
-    with open(clean_path, "w", encoding="utf-8") as f:
+    # with open(clean_path, "w", encoding="utf-8") as f:
+    #     json.dump(result, f, ensure_ascii=False, indent=2)
+    with open("data.json", "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
     print(f"[✓] Clean data for '{volcano}' saved to {clean_path}")
