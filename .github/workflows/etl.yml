@@ -1,12 +1,12 @@
-name: Scheduled ETL for Merapi
+name: Run Merapi ETL and Deploy
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # Every 30 minutes
-  workflow_dispatch:        # Manual trigger
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 
 jobs:
-  run-etl:
+  etl:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4 apscheduler
 
-      - name: Run ETL (Fetch + Transform)
+      - name: Run ETL pipeline
         run: |
           python raw.py
           python transform.py
@@ -31,5 +31,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           publish_branch: gh-pages
-          keep_files: true
           destination_dir: .
