@@ -2,12 +2,14 @@ import os
 import json
 from datetime import datetime
 from fetch import magmalevelonly
+import pytz
 
 def transform_merapi(volcano="Merapi"):
     data = magmalevelonly()
 
     result = {}
-    timestamp = datetime.now().strftime("%d-%m-%Y %H:%M")
+    jakarta = pytz.timezone("Asia/Jakarta")
+    timestamp = datetime.now(jakarta).strftime("%d-%m-%Y %H:%M")
 
     for level, volcanos in data.items():
         if volcano in volcanos:
