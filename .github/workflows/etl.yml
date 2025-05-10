@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4 apscheduler
 
-      - name: Run ETL pipeline
+      - name: Run ETL
         run: |
           python transform.py
       
