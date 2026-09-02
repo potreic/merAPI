@@ -1,8 +1,8 @@
 {
   "Merapi": {
-    "Status": "Level I (Normal)",
+    "Status": "Level III (Siaga)",
     "location": "Daerah Istimewa Yogyakarta dan Jawa Tengah",
-    "link": "https://magma.esdm.go.id/v1/gunung-api/laporan/324756?signature=bcd52152441e8f7f3d55cf6d50e829f93ec31132e70b7db6fa16810397dba7da",
-    "timestamp": "02-09-2026 06:19"
+    "link": "https://magma.esdm.go.id/v1/gunung-api/laporan/324780?signature=17ea2af2ff25d1cb0bc2805c5a86459714281094bfb7607ee933f05cdf396b7a",
+    "timestamp": "02-09-2026 08:10"
   }
 }
